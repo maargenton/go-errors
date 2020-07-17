@@ -1,6 +1,7 @@
 # go-errors
 
-Drop-in replacement of native `errors` package that adds value type sentinel errors and error composition.
+Drop-in replacement of the native Go `errors` package that adds value type
+sentinel errors and error composition.
 
 [![GoDoc](https://godoc.org/github.com/maargenton/go-errors?status.svg)](https://godoc.org/github.com/maargenton/go-errors)
 [![Version](https://img.shields.io/github/tag/maargenton/go-errors.svg)](https://github.com/maargenton/go-errors)
@@ -23,24 +24,38 @@ import "github.com/maargenton/go-errors"
 
 Package errors is a drop-in replacement for the built-in errors package. It
 forwards all call to the errors API directly to the built-in errors package.
-As ogf Go 1.13, this include:
+As of Go 1.13, this include:
 
 - `errors.New()`
 - `errors.Unwrap()`
 - `errors.Is()`
 - `errors.As()`
 
+### Sentinel error
 
-The package defines a `Sentinel` error type based on string that can be
-defined as const. They are immutable and proper value type.
+Sentinel errors can be defined as const values of type errors.Sentinel. Such sentinel errors are immutable and proper value type. They can be used directly in foreign packages to test against, but they can also be redefined locally to reduce package dependency and still be tested against.
 
 ```go
-const ErrMyError errors.Sentinel = "ErrMyError: something happened"
+const ErrMyError errors.Sentinel = "ErrMyError"
+
+if errors.Is(err, ErrMyError) {
+    // Specific error ErrMyError can be handled here
+}
+
+if errors.Is(err, errors.Sentinel("ErrMyError") {
+    // This also detects the same error
+}
+
 ```
 
-It also defines a way to compose multiple errors together, typically a
-sentinel error and an detailed error message potentially with underlying
-error. Unwrap() returns the second error, but Is() and As() follow both path.
+### Error composition
+
+With sentinel errors, instead of wrapping one error into another, you might want
+to compose two or more errors together with `errors.Compose()`. Typical use-case
+would compose a sentinel error with either an underlying error or a more
+detailed error message.
+
+The error returned by `errors.Compose()` unwraps into the second error argument, but when using `errors.Is()` or `errors.As()`, all error branches are evaluated from left to right.
 
 ```go
 err = errors.Compose(ErrMyError, underlyingError)

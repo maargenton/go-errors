@@ -1,6 +1,6 @@
 // Package errors is a drop-in replacement for the built-in errors package. It
 // forwards all call to the errors API directly to the built-in errors package.
-// As ogf Go 1.13, this include:
+// As of Go 1.13, this include:
 //
 //   	errors.New()
 //   	errors.Unwrap()
