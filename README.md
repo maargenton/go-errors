@@ -3,11 +3,22 @@
 Drop-in replacement of the native Go `errors` package that adds value type
 sentinel errors and error composition.
 
-[![GoDoc](https://godoc.org/github.com/maargenton/go-errors?status.svg)](https://godoc.org/github.com/maargenton/go-errors)
-[![Version](https://img.shields.io/github/tag/maargenton/go-errors.svg)](https://github.com/maargenton/go-errors)
-[![Build Status](https://travis-ci.org/maargenton/go-errors.svg?branch=master)](https://travis-ci.org/maargenton/go-errors)
-[![codecov](https://codecov.io/gh/maargenton/go-errors/branch/master/graph/badge.svg)](https://codecov.io/gh/maargenton/go-errors)
-[![Go Report Card](https://goreportcard.com/badge/github.com/maargenton/go-errors)](https://goreportcard.com/report/github.com/maargenton/go-errors)
+[![Latest](
+  https://img.shields.io/github/v/tag/maargenton/go-errors?color=blue&label=latest&logo=go&logoColor=white&sort=semver)](
+  https://pkg.go.dev/github.com/maargenton/go-errors)
+[![Build](
+  https://img.shields.io/github/workflow/status/maargenton/go-errors/build?label=build&logo=github&logoColor=aaaaaa)](
+  https://github.com/maargenton/go-errors/actions?query=branch%3Amaster)
+[![Codecov](
+  https://img.shields.io/codecov/c/github/maargenton/go-errors?label=codecov&logo=codecov&logoColor=aaaaaa&token=fVZ3ZMAgfo)](
+  https://codecov.io/gh/maargenton/go-errors)
+[![Go Report Card](
+  https://goreportcard.com/badge/github.com/maargenton/go-errors)](
+  https://goreportcard.com/report/github.com/maargenton/go-errors)
+
+
+---------------------------
+
 
 
 ## Installation
