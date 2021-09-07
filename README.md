@@ -20,7 +20,6 @@ sentinel errors and error composition.
 ---------------------------
 
 
-
 ## Installation
 
 ```shell
