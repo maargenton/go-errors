@@ -10,7 +10,7 @@ sentinel errors and error composition.
   https://img.shields.io/github/workflow/status/maargenton/go-errors/build?label=build&logo=github&logoColor=aaaaaa)](
   https://github.com/maargenton/go-errors/actions?query=branch%3Amaster)
 [![Codecov](
-  https://img.shields.io/codecov/c/github/maargenton/go-errors?label=codecov&logo=codecov&logoColor=aaaaaa&token=fVZ3ZMAgfo)](
+  https://img.shields.io/codecov/c/github/maargenton/go-errors?label=codecov&logo=codecov&logoColor=aaaaaa&token=whNBObdVf6)](
   https://codecov.io/gh/maargenton/go-errors)
 [![Go Report Card](
   https://goreportcard.com/badge/github.com/maargenton/go-errors)](
